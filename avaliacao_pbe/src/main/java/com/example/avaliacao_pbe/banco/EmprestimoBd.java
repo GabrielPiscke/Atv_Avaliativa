@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmprestimoBd {
-    private List<Emprestimo> emprestimos;
     private List<Livro> livros;
+    private List<Emprestimo> emprestimos;
     public EmprestimoBd(){this.emprestimos = new ArrayList<>();}
+    public void LivroBd(){this.livros = new ArrayList<>();}
 
     public List<Emprestimo> findALl() {
         return new ArrayList<>(emprestimos);
@@ -23,16 +24,10 @@ public class EmprestimoBd {
             return true;
         }
     }
-    public boolean makeLivro(Livro livro) {
-          livros.add(livro);
-            return true;
-    }
 
-    public Emprestimo getByidEmprestimo(long idEmprestimo){
-        return emprestimos.stream()
-                .filter(obj -> obj.getIdEmprestimo() == idEmprestimo)
-                .findFirst()
-                .orElse(null);
+    public boolean makeLivro(Livro livro) {
+        livros.add(livro);
+        return true;
     }
     public Livro getByidLivro(long idLivro){
         return livros.stream()
@@ -40,6 +35,15 @@ public class EmprestimoBd {
                 .findFirst()
                 .orElse(null);
     }
+
+
+    public Emprestimo getByidEmprestimo(long idEmprestimo){
+        return emprestimos.stream()
+                .filter(obj -> obj.getIdEmprestimo() == idEmprestimo)
+                .findFirst()
+                .orElse(null);
+    }
+
     public Emprestimo getByDatafinal(long dataFinal){
         return emprestimos.stream()
                 .filter(obj -> obj.getdataFinal() == dataFinal)

@@ -4,8 +4,6 @@ import com.example.avaliacao_pbe.banco.EmprestimoBd;
 import com.example.avaliacao_pbe.model.Cliente;
 import com.example.avaliacao_pbe.model.Emprestimo;
 import com.example.avaliacao_pbe.model.Livro;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
